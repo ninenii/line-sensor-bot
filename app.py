@@ -17,8 +17,8 @@ THINGSPEAK_READ_API_KEY = "E963HNR4SUJWS8YO"  # ใส่ Read API Key ของ
 # สร้าง Flask App
 app = Flask(__name__)
 
-@app.route("/callback", methods=['POST'])
-def callback():
+@app.route("/webhook", methods=['POST'])
+def webhook():
     signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
 
