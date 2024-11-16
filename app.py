@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, jsonify
 import requests
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import TextMessage, TextSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 # สร้างตัวแปร LINE BOT API
 LINE_CHANNEL_ACCESS_TOKEN = "UiQb94tyD1whY/1I2iAaVIUSijxvvNqAVjCnJwEZNiO1LEtYqeQBkdmcNL3qSCHDS7JCsDDM3n94o/t/htF0ygUmuD5bzZtyCqpMLFjuxGHaQ/0n0t83Y5DaPAo64ZHX6WKMs+yg4rE76ypEbfMEfAdB04t89/1O/w1cDnyilFU="  # ใส่ Channel Access Token
