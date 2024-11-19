@@ -33,7 +33,7 @@ def webhook():
 def handle_message(event):
     message = event.message.text.strip().lower()
 
-    if message == "pm now":
+    if message == "pm2.5":
         # ดึงข้อมูล PM1, PM2.5, PM10 จาก ThingSpeak
         url = f"https://api.thingspeak.com/channels/{THINGSPEAK_CHANNEL_ID}/fields/1.json?api_key={THINGSPEAK_READ_API_KEY}&results=1"
         response = requests.get(url)
@@ -43,7 +43,7 @@ def handle_message(event):
             pm1 = data["feeds"][0].get("field1", "N/A")
             pm2_5 = data["feeds"][0].get("field2", "N/A")
             pm10 = data["feeds"][0].get("field3", "N/A")
-            message = f"PM1: {pm1} ug/m3\nPM2.5: {pm2_5} ug/m3\nPM10: {pm10} ug/m3"
+            message = f"ค่า PM 2.5 ณ เวลานี้ คือ\nPM1: {pm1} ug/m3\nPM2.5: {pm2_5} ug/m3\nPM10: {pm10} ug/m3"
         else:
             message = "ไม่สามารถดึงข้อมูลได้จาก ThingSpeak"
 
