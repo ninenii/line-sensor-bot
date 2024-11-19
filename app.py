@@ -35,7 +35,7 @@ def handle_message(event):
 
     if message == "pm2.5":
         # ดึงข้อมูล PM1, PM2.5, PM10 จาก ThingSpeak
-        url = f"https://api.thingspeak.com/channels/{THINGSPEAK_CHANNEL_ID}/fields/1.json?api_key={THINGSPEAK_READ_API_KEY}&results=1"
+        url = f"https://api.thingspeak.com/channels/{THINGSPEAK_CHANNEL_ID}/feeds.json?api_key={THINGSPEAK_READ_API_KEY}&results=1"
         response = requests.get(url)
         data = response.json()
 
